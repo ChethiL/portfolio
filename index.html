@@ -1,0 +1,2222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Chethi Liyanapathirana — IT Operations Manager | Cloud Infrastructure & Digital Transformation" />
+  <title>Chethi Liyanapathirana | Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* =============================================
+       CSS VARIABLES — Light & Dark Theme
+       ============================================= */
+    :root {
+      --font-primary: 'Inter', system-ui, sans-serif;
+      --font-heading: 'Poppins', system-ui, sans-serif;
+
+      /* Light theme (default) */
+      --bg-primary: #f8fafc;
+      --bg-secondary: #ffffff;
+      --bg-tertiary: #f1f5f9;
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #94a3b8;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --accent-light: rgba(37, 99, 235, 0.1);
+      --accent-gradient: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.08);
+      --shadow-md: 0 4px 20px rgba(15, 23, 42, 0.1);
+      --shadow-lg: 0 10px 40px rgba(15, 23, 42, 0.12);
+      --nav-bg: rgba(255, 255, 255, 0.85);
+      --card-hover: translateY(-6px);
+      --timeline-line: #cbd5e1;
+      --progress-bg: #e2e8f0;
+      --hero-glow: rgba(37, 99, 235, 0.15);
+    }
+
+    [data-theme="dark"] {
+      --bg-primary: #0b1120;
+      --bg-secondary: #111827;
+      --bg-tertiary: #1e293b;
+      --text-primary: #f1f5f9;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --accent: #3b82f6;
+      --accent-hover: #60a5fa;
+      --accent-light: rgba(59, 130, 246, 0.15);
+      --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+      --border: #1e293b;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.5);
+      --nav-bg: rgba(11, 17, 32, 0.9);
+      --timeline-line: #334155;
+      --progress-bg: #1e293b;
+      --hero-glow: rgba(59, 130, 246, 0.2);
+    }
+
+    /* =============================================
+       RESET & BASE
+       ============================================= */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      font-family: var(--font-primary);
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      transition: background-color 0.4s ease, color 0.4s ease;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: color 0.3s ease;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      padding: 5rem 0;
+    }
+
+    /* =============================================
+       SECTION TITLES
+       ============================================= */
+    .section-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: var(--accent-gradient);
+      border-radius: 2px;
+      margin: 0.75rem auto 0;
+    }
+
+    .section-subtitle {
+      color: var(--text-secondary);
+      margin-top: 1rem;
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 1rem;
+    }
+
+    /* =============================================
+       BUTTONS
+       ============================================= */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.75rem;
+      border-radius: 50px;
+      font-family: var(--font-primary);
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent-gradient);
+      color: #fff;
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(37, 99, 235, 0.45);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-primary);
+      border: 2px solid var(--border);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .btn-sm {
+      padding: 0.5rem 1.25rem;
+      font-size: 0.85rem;
+    }
+
+    /* =============================================
+       NAVBAR
+       ============================================= */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: var(--nav-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      transition: background 0.4s ease, box-shadow 0.3s ease;
+    }
+
+    .navbar.scrolled {
+      box-shadow: var(--shadow-md);
+    }
+
+    .nav-container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .nav-logo {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 700;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .nav-link {
+      padding: 0.5rem 0.85rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--accent);
+      background: var(--accent-light);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .theme-toggle {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+    }
+
+    .theme-toggle:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: rotate(15deg);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--text-primary);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* =============================================
+       HERO SECTION
+       ============================================= */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 72px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, var(--hero-glow) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-greeting {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+      opacity: 0;
+      animation: fadeSlideUp 0.8s ease forwards;
+    }
+
+    .hero-name {
+      font-family: var(--font-heading);
+      font-size: clamp(2.5rem, 5vw, 3.75rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+      opacity: 0;
+      animation: fadeSlideUp 0.8s ease 0.15s forwards;
+    }
+
+    .hero-title {
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-weight: 500;
+      color: var(--text-secondary);
+      margin-bottom: 1.25rem;
+      min-height: 2rem;
+      opacity: 0;
+      animation: fadeSlideUp 0.8s ease 0.3s forwards;
+    }
+
+    .hero-title .cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1.2em;
+      background: var(--accent);
+      margin-left: 2px;
+      vertical-align: text-bottom;
+      animation: blink 0.8s step-end infinite;
+    }
+
+    .hero-tagline {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      max-width: 520px;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeSlideUp 0.8s ease 0.45s forwards;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      opacity: 0;
+      animation: fadeSlideUp 0.8s ease 0.6s forwards;
+    }
+
+    .hero-image-wrapper {
+      display: flex;
+      justify-content: center;
+      opacity: 0;
+      animation: fadeSlideUp 0.8s ease 0.5s forwards;
+    }
+
+    .hero-image-frame {
+      position: relative;
+      width: 320px;
+      height: 320px;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .hero-image-frame::before {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      background: var(--accent-gradient);
+      border-radius: 26px;
+      z-index: -1;
+    }
+
+    .hero-image-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 24px;
+    }
+
+    /* =============================================
+       ABOUT SECTION
+       ============================================= */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .about-text p {
+      color: var(--text-secondary);
+      margin-bottom: 1.25rem;
+      font-size: 1.02rem;
+    }
+
+    .about-details {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .about-details h3 {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+    }
+
+    .detail-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .detail-item:last-child {
+      border-bottom: none;
+    }
+
+    .detail-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--accent-light);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .detail-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .detail-value {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+
+    .detail-value a {
+      color: var(--accent);
+    }
+
+    .detail-value a:hover {
+      text-decoration: underline;
+    }
+
+    /* =============================================
+       EXPERIENCE — TIMELINE
+       ============================================= */
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--timeline-line);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 60px;
+      padding-bottom: 2.5rem;
+      opacity: 0;
+      transform: translateX(-20px);
+      transition: all 0.6s ease;
+    }
+
+    .timeline-item.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 12px;
+      top: 6px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--accent-gradient);
+      border: 3px solid var(--bg-primary);
+      box-shadow: 0 0 0 3px var(--accent-light);
+      z-index: 1;
+    }
+
+    .timeline-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.75rem;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+    }
+
+    .timeline-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: var(--card-hover);
+    }
+
+    .timeline-date {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 0.25rem 0.75rem;
+      border-radius: 50px;
+      margin-bottom: 0.75rem;
+    }
+
+    .timeline-role {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .timeline-company {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    .timeline-desc {
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+    }
+
+    .timeline-desc li {
+      position: relative;
+      padding-left: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-desc li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 0.85rem;
+    }
+
+    /* =============================================
+       EDUCATION
+       ============================================= */
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .edu-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .edu-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.6s ease;
+    }
+
+    .edu-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-4px);
+    }
+
+    .edu-card.visible:hover {
+      transform: translateY(-4px);
+    }
+
+    .edu-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 0.3rem 0.75rem;
+      border-radius: 50px;
+      margin-bottom: 1rem;
+    }
+
+    .edu-degree {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .edu-institution {
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .edu-period {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .edu-courses {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* =============================================
+       SKILLS
+       ============================================= */
+    .skills-wrapper {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .skill-category {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    .skill-category.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .skill-category h3 {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-primary);
+    }
+
+    .skill-category h3 span {
+      font-size: 1.25rem;
+    }
+
+    .skill-item {
+      margin-bottom: 1.25rem;
+    }
+
+    .skill-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .skill-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .skill-bar {
+      height: 8px;
+      background: var(--progress-bg);
+      border-radius: 50px;
+      overflow: hidden;
+    }
+
+    .skill-fill {
+      height: 100%;
+      background: var(--accent-gradient);
+      border-radius: 50px;
+      width: 0;
+      transition: width 1.2s ease;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .skill-tag {
+      font-size: 0.78rem;
+      padding: 0.3rem 0.75rem;
+      background: var(--accent-light);
+      color: var(--accent);
+      border-radius: 50px;
+      font-weight: 500;
+    }
+
+    /* =============================================
+       PROJECTS
+       ============================================= */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.4s ease;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .project-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.6s ease;
+    }
+
+    .project-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-8px);
+    }
+
+    .project-card.visible:hover {
+      transform: translateY(-8px);
+    }
+
+    .project-image {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .project-card:hover .project-image img {
+      transform: scale(1.08);
+    }
+
+    .project-image-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .project-card:hover .project-image-overlay {
+      opacity: 1;
+    }
+
+    .project-body {
+      padding: 1.5rem;
+    }
+
+    .project-title {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .project-desc {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .project-tech span {
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+      background: var(--bg-tertiary);
+      color: var(--text-secondary);
+      border-radius: 6px;
+      font-weight: 500;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .project-link {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: gap 0.3s ease;
+    }
+
+    .project-link:hover {
+      gap: 0.6rem;
+    }
+
+    .project-period {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    /* =============================================
+       ACHIEVEMENTS
+       ============================================= */
+    .achievements-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .achievement-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.75rem;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: scale(0.95);
+    }
+
+    .achievement-card.visible {
+      opacity: 1;
+      transform: scale(1);
+      transition: all 0.5s ease;
+    }
+
+    .achievement-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .achievement-icon {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .achievement-text {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* =============================================
+       CERTIFICATIONS
+       ============================================= */
+    .certs-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .cert-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem 1.5rem;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+    }
+
+    .cert-badge:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .cert-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--accent-light);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+
+    .cert-name {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .cert-issuer {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* =============================================
+       CONTACT
+       ============================================= */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 3rem;
+    }
+
+    .contact-info h3 {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-info p {
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+
+    .contact-methods {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .contact-method {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .contact-method-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--accent-light);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.15rem;
+      flex-shrink: 0;
+    }
+
+    .contact-method-text strong {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-bottom: 0.15rem;
+    }
+
+    .contact-method-text span,
+    .contact-method-text a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+
+    .contact-method-text a:hover {
+      color: var(--accent);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .social-link {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--bg-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .contact-form {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: var(--font-primary);
+      font-size: 0.95rem;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-light);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 140px;
+    }
+
+    .form-success {
+      display: none;
+      padding: 1rem;
+      background: rgba(34, 197, 94, 0.1);
+      color: #16a34a;
+      border-radius: 10px;
+      text-align: center;
+      font-weight: 500;
+      margin-top: 1rem;
+    }
+
+    [data-theme="dark"] .form-success {
+      color: #4ade80;
+    }
+
+    /* =============================================
+       FOOTER
+       ============================================= */
+    .footer {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 0;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+      text-align: center;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .footer-text {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    /* =============================================
+       SCROLL TO TOP
+       ============================================= */
+    .scroll-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--accent-gradient);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      box-shadow: var(--shadow-md);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+      z-index: 999;
+    }
+
+    .scroll-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .scroll-top:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* =============================================
+       ANIMATIONS
+       ============================================= */
+    @keyframes fadeSlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =============================================
+       RESPONSIVE
+       ============================================= */
+    @media (max-width: 992px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-tagline {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .hero-image-wrapper {
+        order: -1;
+      }
+
+      .hero-image-frame {
+        width: 260px;
+        height: 260px;
+      }
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 3.5rem 0;
+      }
+
+      .nav-menu {
+        position: fixed;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: var(--nav-bg);
+        backdrop-filter: blur(16px);
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 0.25rem;
+        border-bottom: 1px solid var(--border);
+        transform: translateY(-120%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.35s ease;
+      }
+
+      .nav-menu.open {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .nav-link {
+        width: 100%;
+        text-align: center;
+        padding: 0.85rem;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-actions .btn-sm {
+        display: none;
+      }
+
+      .timeline::before {
+        left: 10px;
+      }
+
+      .timeline-item {
+        padding-left: 44px;
+      }
+
+      .timeline-dot {
+        left: 2px;
+      }
+
+      .skills-wrapper {
+        grid-template-columns: 1fr;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =============================================
+       NAVBAR
+       Edit nav links or CV path below as needed
+       ============================================= -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">CL.</a>
+
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#education" class="nav-link">Education</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- UPDATE: Change href to your CV file path -->
+        <a href="/cv/my-cv.pdf" class="btn btn-primary btn-sm" download>Download CV</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+          <span id="themeIcon">🌙</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- =============================================
+         HERO SECTION
+         UPDATE: name, title, tagline, profile image
+         ============================================= -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <p class="hero-greeting">Hello, I'm</p>
+            <h1 class="hero-name">Chethi Liyanapathirana</h1>
+            <h2 class="hero-title">
+              <span id="typedText"></span><span class="cursor"></span>
+            </h2>
+            <p class="hero-tagline">
+              IT operations leader with 14+ years driving cloud migrations, digital transformation,
+              and enterprise infrastructure across multi-site organizations.
+            </p>
+            <div class="hero-buttons">
+              <a href="#contact" class="btn btn-primary">Contact Me</a>
+              <a href="#projects" class="btn btn-outline">View Projects</a>
+            </div>
+          </div>
+          <div class="hero-image-wrapper">
+            <div class="hero-image-frame">
+              <!-- UPDATE: Replace src with your profile photo -->
+              <img src="img/profile.jpg" alt="Chethi Liyanapathirana" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         ABOUT SECTION
+         UPDATE: summary text and personal details
+         ============================================= -->
+    <section id="about">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">About Me</span>
+          <h2 class="section-title">Who I Am</h2>
+          <p class="section-subtitle">Passionate about building reliable IT infrastructure and leading digital transformation.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text fade-in">
+            <!-- UPDATE: Edit your professional summary below -->
+            <p>
+              IT operations leader with 14+ years of experience across infrastructure management,
+              Microsoft Azure and Microsoft 365 administration, network security, and enterprise
+              digital transformation. Proven track record leading multi-site IT operations, driving
+              cost-saving cloud migrations, and delivering end-to-end transformation projects.
+            </p>
+            <p>
+              Currently advancing cloud and information security expertise through an MSc in Computer
+              Science (Wrexham University, UK) and an Executive MSc in Information Security (Asia e
+              University). Seeking an IT Manager role combining strategic leadership with hands-on
+              cloud and infrastructure expertise.
+            </p>
+          </div>
+
+          <div class="about-details fade-in">
+            <h3>Personal Details</h3>
+            <!-- UPDATE: Edit contact details below -->
+            <div class="detail-item">
+              <div class="detail-icon">📍</div>
+              <div>
+                <div class="detail-label">Location</div>
+                <div class="detail-value">Colombo, Sri Lanka</div>
+              </div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-icon">✉️</div>
+              <div>
+                <div class="detail-label">Email</div>
+                <div class="detail-value"><a href="mailto:chethi.parinda@outlook.com">chethi.parinda@outlook.com</a></div>
+              </div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-icon">📞</div>
+              <div>
+                <div class="detail-label">Phone</div>
+                <div class="detail-value"><a href="tel:+94702464781">+94 70 246 4781</a></div>
+              </div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-icon">💼</div>
+              <div>
+                <div class="detail-label">LinkedIn</div>
+                <div class="detail-value"><a href="https://linkedin.com/in/chethi-liyanapathirana" target="_blank" rel="noopener">linkedin.com/in/chethi-liyanapathirana</a></div>
+              </div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-icon">🎓</div>
+              <div>
+                <div class="detail-label">Certifications</div>
+                <div class="detail-value">Azure Administrator (AZ-104), MCSA</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         EXPERIENCE SECTION
+         UPDATE: Add/remove timeline items as needed
+         ============================================= -->
+    <section id="experience" style="background: var(--bg-tertiary);">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">Career</span>
+          <h2 class="section-title">Experience</h2>
+          <p class="section-subtitle">14+ years of progressive IT leadership across enterprise environments.</p>
+        </div>
+
+        <div class="timeline">
+          <!-- Job 1 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-date">Oct 2024 – Present</span>
+              <h3 class="timeline-role">IT Specialist – Group IT</h3>
+              <p class="timeline-company">Sisili Projects Consortium (Pvt) Ltd</p>
+              <ul class="timeline-desc">
+                <li>Lead end-to-end IT operations across multiple company locations, ensuring high availability of infrastructure and user support services.</li>
+                <li>Oversee enterprise IT infrastructure — Microsoft 365, cloud services, endpoint devices, and network systems.</li>
+                <li>Coordinate Dynamics 365 Business Central administration and ERP support activities.</li>
+                <li>Develop IT operational procedures, security policies, and governance practices.</li>
+                <li>Lead digital transformation initiatives — IT helpdesk, asset management, and sales automation — delivering three major systems within 12 months.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Job 2 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-date">Jan 2020 – Nov 2024</span>
+              <h3 class="timeline-role">Senior Executive – IT Operations & Cloud Services</h3>
+              <p class="timeline-company">Atlas Axillia Co. (Pvt) Ltd</p>
+              <ul class="timeline-desc">
+                <li>Managed enterprise cloud infrastructure on Microsoft Azure — VMs, backup solutions, and system availability management.</li>
+                <li>Administered Azure governance policies, backup strategies, and disaster recovery procedures.</li>
+                <li>Monitored and maintained FortiGate firewall infrastructure and network security across multiple sites.</li>
+                <li>Participated in IT governance and disaster recovery planning with periodic testing.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Job 3 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-date">Aug 2018 – Jan 2020</span>
+              <h3 class="timeline-role">IT Executive</h3>
+              <p class="timeline-company">Atlas Axillia Co. (Pvt) Ltd</p>
+              <ul class="timeline-desc">
+                <li>Provided end-to-end IT operational support across business functions.</li>
+                <li>Administered user accounts, system access permissions, and endpoint device support.</li>
+                <li>Supported Microsoft-based infrastructure including Office 365 and server management.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Job 4 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-date">Jan 2017 – Aug 2018</span>
+              <h3 class="timeline-role">IT Support Executive</h3>
+              <p class="timeline-company">HEMAS</p>
+              <ul class="timeline-desc">
+                <li>Provided IT support services under an outsourced ITES engagement.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Job 5 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-date">2014 – 2016</span>
+              <h3 class="timeline-role">ERP Coordinator</h3>
+              <p class="timeline-company">Overseas Realty (Ceylon) PLC</p>
+              <ul class="timeline-desc">
+                <li>Coordinated ERP system support and end-user training.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Job 6 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-date">2013 – 2014</span>
+              <h3 class="timeline-role">Junior Executive – IT</h3>
+              <p class="timeline-company">Open World Recruitment (Pvt) Ltd</p>
+              <ul class="timeline-desc">
+                <li>Provided junior-level IT support and infrastructure assistance.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         EDUCATION SECTION
+         UPDATE: degrees, institutions, dates
+         ============================================= -->
+    <section id="education">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">Academics</span>
+          <h2 class="section-title">Education</h2>
+          <p class="section-subtitle">Continuously advancing expertise in computer science and information security.</p>
+        </div>
+
+        <div class="education-grid">
+          <div class="edu-card">
+            <span class="edu-badge">In Progress</span>
+            <h3 class="edu-degree">MSc in Computer Science</h3>
+            <p class="edu-institution">Wrexham University, UK</p>
+            <p class="edu-period">Oct 2025 – Present · Expected 2026</p>
+            <p class="edu-courses">AI, Database Systems & Data Analytics, Secure Computing, Advanced Machine Learning, Dissertation</p>
+          </div>
+
+          <div class="edu-card">
+            <span class="edu-badge">In Progress</span>
+            <h3 class="edu-degree">Executive MSc in Information Security</h3>
+            <p class="edu-institution">Asia e University</p>
+            <p class="edu-period">Feb 2024 – Present · Expected 2026</p>
+            <p class="edu-courses">Network Security, Application Security, Information Governance, Security Management, Dissertation</p>
+          </div>
+
+          <div class="edu-card">
+            <span class="edu-badge">Completed</span>
+            <h3 class="edu-degree">G.C.E. Advanced Level & Ordinary Level</h3>
+            <p class="edu-institution">St. John's College, Sri Lanka</p>
+            <p class="edu-period">1999 – 2012</p>
+          </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="section-header fade-in" style="margin-top: 4rem; margin-bottom: 2rem;">
+          <span class="section-label">Credentials</span>
+          <h2 class="section-title" style="font-size: 1.75rem;">Certifications</h2>
+        </div>
+
+        <div class="certs-grid fade-in">
+          <div class="cert-badge">
+            <div class="cert-icon">☁️</div>
+            <div>
+              <div class="cert-name">Azure Administrator Associate (AZ-104)</div>
+              <div class="cert-issuer">Microsoft</div>
+            </div>
+          </div>
+          <div class="cert-badge">
+            <div class="cert-icon">🖥️</div>
+            <div>
+              <div class="cert-name">MCSA: Windows Server 2016</div>
+              <div class="cert-issuer">Microsoft</div>
+            </div>
+          </div>
+          <div class="cert-badge">
+            <div class="cert-icon">🔒</div>
+            <div>
+              <div class="cert-name">NSE 1: Network Security Associate</div>
+              <div class="cert-issuer">Fortinet</div>
+            </div>
+          </div>
+          <div class="cert-badge">
+            <div class="cert-icon">🌐</div>
+            <div>
+              <div class="cert-name">CCNA Routing & Switching</div>
+              <div class="cert-issuer">IHRA</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         PROJECTS SECTION
+         UPDATE: project details, images, links
+         ============================================= -->
+    <section id="projects" style="background: var(--bg-tertiary);">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">Portfolio</span>
+          <h2 class="section-title">Key Projects</h2>
+          <p class="section-subtitle">Digital transformation and infrastructure initiatives delivered across organizations.</p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <article class="project-card">
+            <div class="project-image">
+              <img src="img/project-sfa.jpg" alt="Sales Force Automation System" loading="lazy" />
+              <div class="project-image-overlay"></div>
+            </div>
+            <div class="project-body">
+              <p class="project-period">Jan 2026 – Jun 2026</p>
+              <h3 class="project-title">Sales Force Automation System</h3>
+              <p class="project-desc">Leading the transformation of fully manual sales processes into digital workflows through a custom Sales Force Automation platform.</p>
+              <div class="project-tech">
+                <span>Workflow Automation</span><span>Digital Transformation</span><span>Business Process</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link" aria-label="View project details">Details →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card">
+            <div class="project-image">
+              <img src="img/project-governance.jpg" alt="IT Governance and Policy Development" loading="lazy" />
+              <div class="project-image-overlay"></div>
+            </div>
+            <div class="project-body">
+              <p class="project-period">Jan 2026 – May 2026</p>
+              <h3 class="project-title">IT Governance & Policy Development</h3>
+              <p class="project-desc">Led development and implementation of IT policies, procedures, and governance standards across multiple business locations.</p>
+              <div class="project-tech">
+                <span>IT Governance</span><span>Compliance</span><span>Security Policies</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link">Details →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card">
+            <div class="project-image">
+              <img src="img/project-inventory.jpg" alt="Centralized IT Inventory System" loading="lazy" />
+              <div class="project-image-overlay"></div>
+            </div>
+            <div class="project-body">
+              <p class="project-period">Aug 2025 – Sep 2025</p>
+              <h3 class="project-title">Centralized IT Inventory System</h3>
+              <p class="project-desc">Implemented a customized open-source IT asset inventory system for centralized device management across the organization.</p>
+              <div class="project-tech">
+                <span>Asset Management</span><span>Open Source</span><span>IT Operations</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link">Details →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="project-card">
+            <div class="project-image">
+              <img src="img/project-endpoint.jpg" alt="Centralized Endpoint Management" loading="lazy" />
+              <div class="project-image-overlay"></div>
+            </div>
+            <div class="project-body">
+              <p class="project-period">Jul 2025 – Aug 2025</p>
+              <h3 class="project-title">Centralized Endpoint Management</h3>
+              <p class="project-desc">Implemented ESET PROTECT for centralized endpoint management and security controls across 280+ devices at multiple locations.</p>
+              <div class="project-tech">
+                <span>ESET PROTECT</span><span>Endpoint Security</span><span>Device Management</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link">Details →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 5 -->
+          <article class="project-card">
+            <div class="project-image">
+              <img src="img/project-helpdesk.jpg" alt="IT Helpdesk System" loading="lazy" />
+              <div class="project-image-overlay"></div>
+            </div>
+            <div class="project-body">
+              <p class="project-period">May 2025 – Jun 2025</p>
+              <h3 class="project-title">IT Helpdesk System</h3>
+              <p class="project-desc">Designed and deployed a fully customized open-source IT helpdesk system covering all internal IT support needs.</p>
+              <div class="project-tech">
+                <span>ITSM</span><span>Helpdesk</span><span>Open Source</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link">Details →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 6 -->
+          <article class="project-card">
+            <div class="project-image">
+              <img src="img/project-m365.jpg" alt="Google Workspace to Microsoft 365 Migration" loading="lazy" />
+              <div class="project-image-overlay"></div>
+            </div>
+            <div class="project-body">
+              <p class="project-period">Mar 2025 – Jun 2025</p>
+              <h3 class="project-title">Google Workspace → Microsoft 365 Migration</h3>
+              <p class="project-desc">Migrated 200 users to Microsoft 365, delivering LKR 2.5 million in annual cost savings across the organization.</p>
+              <div class="project-tech">
+                <span>Microsoft 365</span><span>Cloud Migration</span><span>Cost Optimization</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link">Details →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 7 -->
+          <article class="project-card">
+            <div class="project-image">
+              <img src="img/project-network.jpg" alt="Networking Revamp Projects" loading="lazy" />
+              <div class="project-image-overlay"></div>
+            </div>
+            <div class="project-body">
+              <p class="project-period">Aug 2022 – Jul 2024</p>
+              <h3 class="project-title">Networking Revamp — Peliyagoda & Welisara</h3>
+              <p class="project-desc">Led infrastructure revamp with CAT6 cabling and dual firewall deployment (FortiGate 100D & Palo Alto) in ring topology.</p>
+              <div class="project-tech">
+                <span>FortiGate</span><span>Palo Alto</span><span>CAT6</span><span>Network Security</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link">Details →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 8 -->
+          <article class="project-card">
+            <div class="project-image">
+              <img src="img/project-o365.jpg" alt="Microsoft Office 365 Migration" loading="lazy" />
+              <div class="project-image-overlay"></div>
+            </div>
+            <div class="project-body">
+              <p class="project-period">Mar 2021 – Aug 2021</p>
+              <h3 class="project-title">Microsoft Office 365 Migration</h3>
+              <p class="project-desc">Migrated organization-wide email and productivity tools from open-source platforms to Microsoft 365 at Atlas Axillia.</p>
+              <div class="project-tech">
+                <span>Microsoft 365</span><span>Email Migration</span><span>Productivity</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link">Details →</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Key Achievements -->
+        <div class="section-header fade-in" style="margin-top: 4rem; margin-bottom: 2rem;">
+          <span class="section-label">Highlights</span>
+          <h2 class="section-title" style="font-size: 1.75rem;">Key Achievements</h2>
+        </div>
+
+        <div class="achievements-grid">
+          <div class="achievement-card">
+            <div class="achievement-icon">💰</div>
+            <p class="achievement-text">LKR 2.5M annual savings from 200-user Google Workspace to Microsoft 365 migration</p>
+          </div>
+          <div class="achievement-card">
+            <div class="achievement-icon">🔧</div>
+            <p class="achievement-text">Three digital transformation systems delivered within a 12-month window</p>
+          </div>
+          <div class="achievement-card">
+            <div class="achievement-icon">🛡️</div>
+            <p class="achievement-text">Dual firewall deployment (FortiGate & Palo Alto) with CAT6 network revamp</p>
+          </div>
+          <div class="achievement-card">
+            <div class="achievement-icon">📈</div>
+            <p class="achievement-text">14+ years progression from Junior IT to operations leadership across 4 organizations</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         SKILLS SECTION
+         UPDATE: skill names and proficiency levels
+         ============================================= -->
+    <section id="skills">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">Expertise</span>
+          <h2 class="section-title">Skills</h2>
+          <p class="section-subtitle">Core competencies across cloud, infrastructure, security, and digital transformation.</p>
+        </div>
+
+        <div class="skills-wrapper">
+          <!-- Cloud & Infrastructure -->
+          <div class="skill-category" data-animate>
+            <h3><span>☁️</span> Cloud Infrastructure</h3>
+            <div class="skill-item">
+              <div class="skill-header"><span>Microsoft Azure</span><span>90%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>Microsoft 365</span><span>95%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>Google Workspace</span><span>80%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Azure VMs</span>
+              <span class="skill-tag">Backup & DR</span>
+              <span class="skill-tag">Cloud Governance</span>
+            </div>
+          </div>
+
+          <!-- Network & Security -->
+          <div class="skill-category" data-animate>
+            <h3><span>🔒</span> Network & Security</h3>
+            <div class="skill-item">
+              <div class="skill-header"><span>FortiGate / Palo Alto</span><span>88%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>Endpoint Security</span><span>85%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>VPN & Network Design</span><span>82%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="82"></div></div>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Fortinet NSE</span>
+              <span class="skill-tag">CCNA</span>
+              <span class="skill-tag">ESET PROTECT</span>
+            </div>
+          </div>
+
+          <!-- IT Operations & Tools -->
+          <div class="skill-category" data-animate>
+            <h3><span>⚙️</span> IT Operations & Tools</h3>
+            <div class="skill-item">
+              <div class="skill-header"><span>IT Strategy & Governance</span><span>90%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>Dynamics 365 Business Central</span><span>75%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>Digital Transformation</span><span>92%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="92"></div></div>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">ITSM</span>
+              <span class="skill-tag">Vendor Management</span>
+              <span class="skill-tag">ITIL 4</span>
+              <span class="skill-tag">Procurement</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         CONTACT SECTION
+         UPDATE: email, social links, form action
+         ============================================= -->
+    <section id="contact" style="background: var(--bg-tertiary);">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">Get In Touch</span>
+          <h2 class="section-title">Contact Me</h2>
+          <p class="section-subtitle">Open to IT Manager opportunities and consulting on cloud & infrastructure projects.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info fade-in">
+            <h3>Let's Connect</h3>
+            <p>Feel free to reach out for collaborations, opportunities, or IT infrastructure consultations. I'll get back to you as soon as possible.</p>
+
+            <div class="contact-methods">
+              <div class="contact-method">
+                <div class="contact-method-icon">✉️</div>
+                <div class="contact-method-text">
+                  <strong>Email</strong>
+                  <a href="mailto:chethi.parinda@outlook.com">chethi.parinda@outlook.com</a>
+                </div>
+              </div>
+              <div class="contact-method">
+                <div class="contact-method-icon">📞</div>
+                <div class="contact-method-text">
+                  <strong>Phone</strong>
+                  <a href="tel:+94702464781">+94 70 246 4781</a>
+                </div>
+              </div>
+              <div class="contact-method">
+                <div class="contact-method-icon">📍</div>
+                <div class="contact-method-text">
+                  <strong>Location</strong>
+                  <span>Colombo, Sri Lanka</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- UPDATE: Add your social media URLs -->
+            <div class="social-links">
+              <a href="https://linkedin.com/in/chethi-liyanapathirana" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">in</a>
+              <a href="https://github.com/" class="social-link" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">GH</a>
+              <a href="mailto:chethi.parinda@outlook.com" class="social-link" aria-label="Email" title="Email">@</a>
+            </div>
+          </div>
+
+          <form class="contact-form fade-in" id="contactForm">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="John Doe" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Your Email</label>
+              <input type="email" id="email" name="email" placeholder="john@example.com" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+            <div class="form-success" id="formSuccess">Thank you! Your message has been sent successfully.</div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =============================================
+       FOOTER
+       UPDATE: copyright year and social links
+       ============================================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-social">
+          <a href="https://linkedin.com/in/chethi-liyanapathirana" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+          <a href="https://github.com/" class="social-link" target="_blank" rel="noopener" aria-label="GitHub">GH</a>
+          <a href="mailto:chethi.parinda@outlook.com" class="social-link" aria-label="Email">@</a>
+        </div>
+        <p class="footer-text">&copy; 2026 Chethi Liyanapathirana. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top -->
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">↑</button>
+
+  <script>
+    /* =============================================
+       THEME TOGGLE — Defaults to system preference
+       ============================================= */
+    (function initTheme() {
+      const toggle = document.getElementById('themeToggle');
+      const icon = document.getElementById('themeIcon');
+      const stored = localStorage.getItem('theme');
+
+      function setTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        icon.textContent = theme === 'dark' ? '☀️' : '🌙';
+        localStorage.setItem('theme', theme);
+      }
+
+      if (stored) {
+        setTheme(stored);
+      } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        setTheme('dark');
+      } else {
+        setTheme('light');
+      }
+
+      toggle.addEventListener('click', () => {
+        const current = document.documentElement.getAttribute('data-theme');
+        setTheme(current === 'dark' ? 'light' : 'dark');
+      });
+
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (!localStorage.getItem('theme')) {
+          setTheme(e.matches ? 'dark' : 'light');
+        }
+      });
+    })();
+
+    /* =============================================
+       TYPING ANIMATION — Hero section
+       UPDATE: Edit titles array below
+       ============================================= */
+    (function initTyping() {
+      const el = document.getElementById('typedText');
+      const titles = [
+        'IT Operations Manager',
+        'Cloud Infrastructure Specialist',
+        'Digital Transformation Leader',
+        'Azure & M365 Administrator'
+      ];
+      let titleIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+
+      function type() {
+        const current = titles[titleIndex];
+        if (isDeleting) {
+          el.textContent = current.substring(0, charIndex - 1);
+          charIndex--;
+        } else {
+          el.textContent = current.substring(0, charIndex + 1);
+          charIndex++;
+        }
+
+        let speed = isDeleting ? 40 : 80;
+
+        if (!isDeleting && charIndex === current.length) {
+          speed = 2000;
+          isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+          isDeleting = false;
+          titleIndex = (titleIndex + 1) % titles.length;
+          speed = 500;
+        }
+
+        setTimeout(type, speed);
+      }
+
+      type();
+    })();
+
+    /* =============================================
+       MOBILE NAVIGATION
+       ============================================= */
+    (function initNav() {
+      const hamburger = document.getElementById('hamburger');
+      const navMenu = document.getElementById('navMenu');
+      const navLinks = document.querySelectorAll('.nav-link');
+      const navbar = document.getElementById('navbar');
+
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('open');
+      });
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          hamburger.classList.remove('active');
+          navMenu.classList.remove('open');
+        });
+      });
+
+      window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 50);
+      });
+
+      /* Active nav link on scroll */
+      const sections = document.querySelectorAll('section[id]');
+      window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY + 100;
+        sections.forEach(section => {
+          const top = section.offsetTop;
+          const height = section.offsetHeight;
+          const id = section.getAttribute('id');
+          if (scrollY >= top && scrollY < top + height) {
+            navLinks.forEach(link => {
+              link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+            });
+          }
+        });
+      });
+    })();
+
+    /* =============================================
+       SCROLL ANIMATIONS — Intersection Observer
+       ============================================= */
+    (function initScrollAnimations() {
+      const observerOptions = { threshold: 0.15, rootMargin: '0px 0px -50px 0px' };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+
+            /* Animate skill bars when visible */
+            entry.target.querySelectorAll('.skill-fill').forEach(bar => {
+              bar.style.width = bar.dataset.width + '%';
+            });
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.fade-in, .timeline-item, .edu-card, .project-card, .achievement-card, .skill-category').forEach(el => {
+        observer.observe(el);
+      });
+    })();
+
+    /* =============================================
+       SCROLL TO TOP BUTTON
+       ============================================= */
+    (function initScrollTop() {
+      const btn = document.getElementById('scrollTop');
+
+      window.addEventListener('scroll', () => {
+        btn.classList.toggle('visible', window.scrollY > 400);
+      });
+
+      btn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+
+    /* =============================================
+       CONTACT FORM — Client-side handling
+       UPDATE: Connect to a backend or form service
+       ============================================= */
+    (function initContactForm() {
+      const form = document.getElementById('contactForm');
+      const success = document.getElementById('formSuccess');
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        /* Opens default mail client — replace with Formspree/Netlify/etc. */
+        const subject = encodeURIComponent('Portfolio Contact from ' + name);
+        const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + message);
+        window.location.href = 'mailto:chethi.parinda@outlook.com?subject=' + subject + '&body=' + body;
+
+        success.style.display = 'block';
+        form.reset();
+        setTimeout(() => { success.style.display = 'none'; }, 5000);
+      });
+    })();
+  </script>
+</body>
+</html>
